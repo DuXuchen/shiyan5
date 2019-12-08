@@ -19,5 +19,14 @@ public class ZhuceListener implements ActionListener{
 		}
 		buf_reader = new BufferedReader(r_file);  
 	}
-
+	public void writeFile() {
+		try {
+			w_file = new FileWriter("b.txt");
+			buf_writer = new BufferedWriter(w_file);
+			String str = txt.getText();
+			buf_writer.write(str,0,str.length());
+			buf_writer.flush();
+		}
+		catch(IOException ew) {System.out.println(ew);}
+	}
 }
